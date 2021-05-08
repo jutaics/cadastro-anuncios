@@ -1,19 +1,12 @@
 package io.github.jutaics.cadastroanunciosapi;
 
-import io.github.jutaics.cadastroanunciosapi.model.entity.CadastroAnuncio;
-import io.github.jutaics.cadastroanunciosapi.model.repository.CadastroAnuncioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
-import java.time.LocalDate;
-import java.time.ZonedDateTime;
 
 @SpringBootApplication
 public class CadastroAnunciosApiApplication {
 
+   /*
     @Bean
     // teste de persitência
     public CommandLineRunner commandLineRunner(
@@ -35,6 +28,7 @@ public class CadastroAnunciosApiApplication {
         };
 
     }
+    */
 
     public static void main(String[] args) {
 
