@@ -4,17 +4,25 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import { CadastroAnuncioComponent } from './cadastro-anuncio/cadastro-anuncio.component';
+import { CadastroAnuncioService } from './cadastro-anuncio.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CadastroAnuncioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule
+
   ],
-  providers: [],
+  providers: [
+    CadastroAnuncioService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
