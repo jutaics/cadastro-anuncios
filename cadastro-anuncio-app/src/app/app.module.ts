@@ -8,11 +8,26 @@ import {MatButtonModule} from '@angular/material/button';
 import { CadastroAnuncioService } from './cadastro-anuncio.service';
 import { CadastroAnuncioComponent } from './pages/cadastro-anuncio/cadastro-anuncio.component';
 import { MatCardModule, MatDatepickerModule, MatFormFieldModule, MatIconModule, MatInputModule, MatNativeDateModule, MatTabsModule, MatToolbarModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { CurrencyMaskConfig, CurrencyMaskModule, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask';
+import { HelloComponent } from './hello.component';
+
+export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
+  align: "right",
+  allowNegative: true,
+  decimal: ",",
+  precision: 2,
+  prefix: "R$ ",
+  suffix: "",
+  thousands: "."
+};
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CadastroAnuncioComponent
+    AppComponent,   
+    CadastroAnuncioComponent,
+    HelloComponent    
   ],
   imports: [
     BrowserModule,
@@ -26,12 +41,16 @@ import { MatCardModule, MatDatepickerModule, MatFormFieldModule, MatIconModule, 
     MatFormFieldModule,
     MatTabsModule,
     MatNativeDateModule,
-    MatDatepickerModule
-
-  ],
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    FormsModule,
+    CurrencyMaskModule   
+ 
+  ], 
   providers: [
-    CadastroAnuncioService
-  ],
+    CadastroAnuncioService,
+    { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig }
+  ], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -21,9 +21,10 @@
 
                             <div class="card-body">
 
-                                <mat-card-subtitle>Dados do Anúncio</mat-card-subtitle>
+                                <mat-card-subtitle><b>Dados do Anúncio</b></mat-card-subtitle>
 
-                                <form>
+                                <form [formGroup]="myForm">
+
 
                                     <mat-form-field class="full-width">
                                         <mat-icon class="icon padrao-tamanho-icone" matPrefix>label</mat-icon>
@@ -43,9 +44,10 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <mat-form-field class="full-width">
-                                                    <mat-label>Data Início</mat-label>
+                                                    <mat-label>Data Início:</mat-label>
                                                     <input matInput [matDatepicker]="dataInicio">
-                                                    <mat-datepicker-toggle matSuffix [for]="dataInicio"></mat-datepicker-toggle>
+                                                    <mat-datepicker-toggle matSuffix [for]="dataInicio">
+                                                    </mat-datepicker-toggle>
                                                     <mat-datepicker #dataInicio></mat-datepicker>
                                                 </mat-form-field>
                                             </div>
@@ -54,9 +56,10 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <mat-form-field class="full-width">
-                                                    <mat-label>Data Início</mat-label>
+                                                    <mat-label>Data Término:</mat-label>
                                                     <input matInput [matDatepicker]="dataTermino">
-                                                    <mat-datepicker-toggle matSuffix [for]="dataTermino"></mat-datepicker-toggle>
+                                                    <mat-datepicker-toggle matSuffix [for]="dataTermino">
+                                                    </mat-datepicker-toggle>
                                                     <mat-datepicker #dataTermino></mat-datepicker>
                                                 </mat-form-field>
                                             </div>
@@ -71,9 +74,12 @@
                                                     <mat-icon class="icon padrao-tamanho-icone" matPrefix>attach_money
                                                     </mat-icon>
                                                     <mat-label>Valor Investido:</mat-label>
-                                                    <input matInput appCurrencyInputMask type="number"
-                                                        placeholder="Informe o Nome do Cliente"
-                                                        class="form-control form-campo" maxlength="256" />
+                                                    <input matInput type="text" formControlName="valorInvestido"
+                                                        id="currency-number" placeholder="Informe o Valor"
+                                                        currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', precision:'2' }" class="form-control form-campo"
+                                                        maxlength="256" />
+
+
                                                 </mat-form-field>
                                             </div>
                                         </div>
@@ -86,6 +92,7 @@
                                         <button mat-button (click)="limparForm()"
                                             class="btn btn-secondary btn-limpar">Limpar</button>
                                     </div>
+
 
                                 </form>
                             </div>

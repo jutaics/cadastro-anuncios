@@ -1,31 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material';
+import { FormControl, FormGroup } from '@angular/forms';
+import { tap } from 'rxjs/operators';
+import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 
 @Component({
   selector: 'app-cadastro-anuncio',
   templateUrl: './cadastro-anuncio.component.html',
-  styleUrls: ['./cadastro-anuncio.component.css'],
-
+  styleUrls: ['./cadastro-anuncio.component.css']
 })
 export class CadastroAnuncioComponent implements OnInit {
 
-  registerForm: FormGroup;
+  myForm: FormGroup;
 
-  constructor() { }
+  numberMask = createNumberMask({
+    integerLimit: 7
+  })
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.myForm = new FormGroup({
 
+      // other version currently used in project
+      valorInvestido: new FormControl()    
+    });
 
-  onSubmit() {}
+    this.myForm.valueChanges.subscribe(console.log);
+ 
+  }
+
+  onSubmit() { }
 
 
   limparForm() {
     this.ngOnInit();
-  }
-
-  public removerEspaco(formGroup: FormGroup) {
-    Object.keys(formGroup.controls).forEach((key) => formGroup.get(key).setValue(formGroup.get(key).value.trim()));
   }
 
 }
