@@ -1,0 +1,111 @@
+<div class="container">
+    <div class="espacoSuperior"></div>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title" style="padding-top:10px; padding-left:45px; text-align: center;">
+                    SISTEMA DE CADASTRO DE ANÚNCIOS
+                </h4>
+            </div>
+
+            <mat-tab-group>
+
+                <mat-tab>
+                    <mat-card class="container">
+
+                        <ng-template mat-tab-label>
+                            <h5>CADASTRAR</h5>
+                        </ng-template>
+
+                        <mat-card>
+
+                            <div class="card-body">
+
+                                <mat-card-subtitle>Dados do Anúncio</mat-card-subtitle>
+
+                                <form>
+
+                                    <mat-form-field class="full-width">
+                                        <mat-icon class="icon padrao-tamanho-icone" matPrefix>label</mat-icon>
+                                        <mat-label>Nome:</mat-label>
+                                        <input matInput placeholder="Informe o Nome do Anúncio"
+                                            class="form-control form-campo" maxlength="256" />
+                                    </mat-form-field>
+
+                                    <mat-form-field class="full-width">
+                                        <mat-icon class="icon padrao-tamanho-icone" matPrefix>person_outline</mat-icon>
+                                        <mat-label>Cliente:</mat-label>
+                                        <input matInput placeholder="Informe o Nome do Cliente"
+                                            class="form-control form-campo" maxlength="256" />
+                                    </mat-form-field>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <mat-form-field class="full-width">
+                                                    <mat-label>Data Início</mat-label>
+                                                    <input matInput [matDatepicker]="dataInicio">
+                                                    <mat-datepicker-toggle matSuffix [for]="dataInicio"></mat-datepicker-toggle>
+                                                    <mat-datepicker #dataInicio></mat-datepicker>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <mat-form-field class="full-width">
+                                                    <mat-label>Data Início</mat-label>
+                                                    <input matInput [matDatepicker]="dataTermino">
+                                                    <mat-datepicker-toggle matSuffix [for]="dataTermino"></mat-datepicker-toggle>
+                                                    <mat-datepicker #dataTermino></mat-datepicker>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <mat-form-field class="full-width">
+                                                    <mat-icon class="icon padrao-tamanho-icone" matPrefix>attach_money
+                                                    </mat-icon>
+                                                    <mat-label>Valor Investido:</mat-label>
+                                                    <input matInput appCurrencyInputMask type="number"
+                                                        placeholder="Informe o Nome do Cliente"
+                                                        class="form-control form-campo" maxlength="256" />
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group text-right">
+                                        <button mat-button (click)="onSubmit();"
+                                            class="btn btn-primary btn-enviar">Salvar</button>
+
+                                        <button mat-button (click)="limparForm()"
+                                            class="btn btn-secondary btn-limpar">Limpar</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </mat-card>
+
+                    </mat-card>
+
+                </mat-tab>
+
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <h5>VISUALIZAR</h5>
+                    </ng-template>
+
+                    <mat-card class="container">
+
+                        <!--Colar o Código Aqui-->
+                    </mat-card>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>
