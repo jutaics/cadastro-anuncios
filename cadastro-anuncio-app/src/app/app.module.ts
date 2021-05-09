@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
-import { CadastroAnuncioComponent } from './cadastro-anuncio/cadastro-anuncio.component';
 import { CadastroAnuncioService } from './cadastro-anuncio.service';
+import { CadastroAnuncioComponent } from './pages/cadastro-anuncio/cadastro-anuncio.component';
+import { MatCardModule, MatDatepickerModule, MatFormFieldModule, MatIconModule, MatInputModule, MatNativeDateModule, MatTabsModule, MatToolbarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,15 @@ import { CadastroAnuncioService } from './cadastro-anuncio.service';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatCardModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatTabsModule,
+    MatNativeDateModule,
+    MatDatepickerModule
 
   ],
   providers: [
