@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { IdentityStorage } from '../../../auth/_models/identity.storage';
-import { BaseComponent } from '../../base/base.component';
 import { AuthenticationService } from '../../../auth/_services';
 import { LocalStorageService } from 'angular-web-storage';
 import { HttpClient } from '@angular/common/http';
@@ -11,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements BaseComponent, OnInit, OnDestroy {
+export class HeaderComponent implements OnInit, OnDestroy {
 
   response: string;
   api: string;
