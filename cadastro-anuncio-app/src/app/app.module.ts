@@ -46,6 +46,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { DatePickerFormatDirective } from './utils/date-picker-format.directive';
 
 
 const globalSettings: RecaptchaSettings = { siteKey: '6Lc8vGwUAAAAAOsheXbsSd7qKpwLv0t2ECF1i___' };
@@ -68,7 +70,8 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     AnuncioComponent,
     CadastroAnuncioComponent,
     ConsultaAnuncioComponent,
-    HelloComponent
+    HelloComponent,
+    DatePickerFormatDirective
   ],
   imports: [
     MatDialogModule,
@@ -101,7 +104,8 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     MatTabsModule,
     MatDatepickerModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatMomentDateModule
   ],
   providers: [
     PadraoService,

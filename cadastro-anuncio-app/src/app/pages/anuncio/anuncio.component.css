@@ -1,3 +1,7 @@
 .container{
     padding-bottom: 30px;
 }
+
+.bg{
+    background-image: url("../../../assets/img/background.png");
+}
