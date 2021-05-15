@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/_guards';
+import { AnuncioComponent } from './pages/anuncio/anuncio.component';
 
-const routes: Routes = [];
+
+const routes: Routes = [
+  // Padrão para telas com base no perfil
+  // { path: 'home', component: AnuncioComponent, canActivate: [AuthGuard] },  
+  { path: '', component: AnuncioComponent },
+  { path: '**', redirectTo: '' }
+];
 
 @NgModule({
+  exports: [RouterModule],
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  providers: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+}
