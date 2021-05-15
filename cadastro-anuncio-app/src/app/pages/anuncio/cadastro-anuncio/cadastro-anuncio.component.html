@@ -1,0 +1,75 @@
+    <mat-card-subtitle><b>Dados do Anúncio</b></mat-card-subtitle>
+
+    <form [formGroup]="myForm">
+
+
+        <mat-form-field class="full-width">
+            <mat-icon class="icon padrao-tamanho-icone" matPrefix>label</mat-icon>
+            <mat-label>Nome:</mat-label>
+            <input matInput placeholder="Informe o Nome do Anúncio"
+                class="form-control form-campo" maxlength="256" />
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-icon class="icon padrao-tamanho-icone" matPrefix>person_outline</mat-icon>
+            <mat-label>Cliente:</mat-label>
+            <input matInput placeholder="Informe o Nome do Cliente"
+                class="form-control form-campo" maxlength="256" />
+        </mat-form-field>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <mat-form-field class="full-width">
+                        <mat-label>Data Início:</mat-label>
+                        <input matInput [matDatepicker]="dataInicio">
+                        <mat-datepicker-toggle matSuffix [for]="dataInicio">
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #dataInicio></mat-datepicker>
+                    </mat-form-field>
+                
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <mat-form-field>
+                        <input type="hidden" [ngModelOptions]="{standalone: true}" [(ngModel)]="value" [matDatepicker]="picker" placeholder="Choose a date">
+                        <input matInput type="text" [textMask]="mask" [ngModel]="myForm.get('dataTermino').value | date : myForm.get('dataTermino').value !== null?'dd/MM/yyyy' : ''"
+                         [ngModelOptions]="{standalone: true}" (blur)="onBlur()" (change)='todate($event.target.value)' />
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <mat-form-field class="full-width">
+                        <mat-icon class="icon padrao-tamanho-icone" matPrefix>attach_money
+                        </mat-icon>
+                        <mat-label>Valor Investido:</mat-label>
+                        <input matInput type="text" formControlName="valorInvestido"
+                            id="currency-number" placeholder="Informe o Valor"
+                            currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', precision:'2' }" class="form-control form-campo"
+                            maxlength="256" />
+
+
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group text-right">
+            <button mat-button (click)="onSubmit();"
+                class="btn btn-primary btn-enviar">Salvar</button>
+
+            <button mat-button (click)="limparForm()"
+                class="btn btn-secondary btn-limpar">Limpar</button>
+        </div>
+
+
+    </form>
