@@ -2,7 +2,7 @@
 
 <form class="bg">
 
-
+  <div id="content" #content>
     <table mat-table [dataSource]="anuncios" class="mat-elevation-z8 col-md-12">
 
         <!--- Note that these columns can be defined in any order.
@@ -41,8 +41,8 @@
         <tr mat-header-row *matHeaderRowDef="colunas"></tr>
         <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
       </table>
-      
+      </div>
        
-
+      <button (click)="downloadPDF()">Export To PDF</button>
 
 </form>
