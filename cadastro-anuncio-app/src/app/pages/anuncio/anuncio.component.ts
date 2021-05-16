@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ConsultaAnuncioComponent } from './consulta-anuncio/consulta-anuncio.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-anuncio',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnuncioComponent implements OnInit {
 
+  @ViewChild(ConsultaAnuncioComponent) lista;
+
   constructor() { }
+
+  listar(){
+     this.lista.listarAnuncios();    
+  }
 
   ngOnInit(): void {
   }

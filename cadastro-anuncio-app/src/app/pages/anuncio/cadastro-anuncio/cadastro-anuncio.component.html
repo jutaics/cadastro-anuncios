@@ -21,7 +21,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <mat-form-field>
-                    <input matInput [matDatepicker]="dtInicio" placeholder="Data Início"
+                    <input matInput [matDatepicker]="dtInicio" readonly placeholder="Data Início"
                         (dateChange)="validarDataInicio($event)" [min]="minDate" formControlName="dtInicio"
                         (click)="dtInicio.open()">
                     <mat-datepicker-toggle matSuffix [for]="dtInicio"></mat-datepicker-toggle>
@@ -34,7 +34,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <mat-form-field class="col-md-6">
-                    <input matInput [matDatepicker]="dtTermino" placeholder="Data Término"
+                    <input matInput [matDatepicker]="dtTermino" readonly placeholder="Data Término"
                         (dateChange)="validarDataTermino($event)" formControlName="dtTermino"
                         (click)="dtTermino.open()">
                     <mat-datepicker-toggle matSuffix [for]="dtTermino"></mat-datepicker-toggle>

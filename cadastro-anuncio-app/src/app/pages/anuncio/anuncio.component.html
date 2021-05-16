@@ -18,7 +18,7 @@
                         </ng-template>
 
                         <mat-card>
-                         <app-cadastro-anuncio></app-cadastro-anuncio>
+                            <app-cadastro-anuncio></app-cadastro-anuncio>
                         </mat-card>
 
                     </mat-card>
@@ -27,12 +27,14 @@
 
                 <mat-tab>
                     <ng-template mat-tab-label>
-                        <h5>VISUALIZAR</h5>
+                        <div class="area-click" (click)="listar();">
+                        <h5 >VISUALIZAR</h5>
+                    </div>
                     </ng-template>
 
                     <mat-card class="container">
 
-                        <!--Colar o Código Aqui-->
+                        <app-consulta-anuncio></app-consulta-anuncio>
                     </mat-card>
                 </mat-tab>
             </mat-tab-group>

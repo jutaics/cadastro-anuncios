@@ -1,3 +1,4 @@
+import { ConsultaAnuncioComponent } from './../consulta-anuncio/consulta-anuncio.component';
 import { Component, forwardRef, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { AnuncioService } from 'src/app/service/anuncio/anuncio.service';
@@ -25,6 +26,7 @@ export class CadastroAnuncioComponent implements OnInit {
 
   myForm: FormGroup;
 
+  listar: ConsultaAnuncioComponent;
   anuncio: Anuncio;
   dtInicio: string;
   minDate = new Date();
@@ -76,15 +78,14 @@ export class CadastroAnuncioComponent implements OnInit {
     anuncio.investimentoPorDia = this.myForm.get('investimentoPorDia').value;
 
     this.service.salvar(anuncio).subscribe(response => {
-      console.log(response);
+      console.log(response);  
     })
-
-    console.log(anuncio);
     //this.limparForm();
   }
 
 
   limparForm() {
+    //this.myForm.reset();
     this.ngOnInit();
   }
 
