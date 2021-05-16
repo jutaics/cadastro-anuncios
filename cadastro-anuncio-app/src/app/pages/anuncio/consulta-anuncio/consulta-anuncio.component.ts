@@ -2,8 +2,9 @@ import { AnuncioService } from 'src/app/service/anuncio/anuncio.service';
 import { Anuncio } from './../anuncio';
 import { FormGroup } from '@angular/forms';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
-declare var jsPDF: any;
 
 @Component({
   selector: 'app-consulta-anuncio',
@@ -34,23 +35,29 @@ export class ConsultaAnuncioComponent implements OnInit {
   @ViewChild('content', {static: false}) content: ElementRef;
 
 
-  public downloadPDF() {
-    const doc = new jsPDF();
+  downloadPDF() {
 
-    const specialElementHandlers = {
-      '#editor': function (element, renderer) {
-        return true;
-      }
+    const div = document.getElementById('content');
+    const options = {
+      background: 'white',
+      scale: 3
     };
 
-    const content = this.content.nativeElement;
+    html2canvas(div, options).then((canvas) => {
 
-    doc.fromHTML(content.innerHTML, 15, 15, {
-      width: 190,
-      'elementHandlers': specialElementHandlers
+      var img = canvas.toDataURL("image/PNG");
+      var doc = new jsPDF('l', 'mm', 'a4');
+
+      const bufferX = 50; 
+      const bufferY = 50;
+      const imgProps = (<any>doc).getImageProperties(img);
+      const pdfWidth = doc.internal.pageSize.getWidth() - 2 * bufferX;
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      doc.addImage(img, 'PNG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
+
+      return doc;
+    }).then((doc) => {
+      doc.save('relatorio_anuncio.pdf');  
     });
-
-    doc.save('test.pdf');
   }
-
 }
