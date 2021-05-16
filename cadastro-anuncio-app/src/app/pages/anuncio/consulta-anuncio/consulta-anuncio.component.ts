@@ -1,3 +1,6 @@
+import { AnuncioService } from 'src/app/service/anuncio/anuncio.service';
+import { Anuncio } from './../anuncio';
+import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultaAnuncioComponent implements OnInit {
 
-  constructor() { }
+  myForm: FormGroup;
+
+  anuncios: Anuncio[] = [];
+  colunas = ['nomeAnuncio', 'cliente', 'dtInicio', 'dtTermino', 'investimentoPorDia']
+
+  constructor(private service: AnuncioService) { }
 
   ngOnInit(): void {
+  }
+
+
+  listarAnuncios() {
+    this.service.list().subscribe(response => {
+      this.anuncios = response;
+    })
   }
 
 }

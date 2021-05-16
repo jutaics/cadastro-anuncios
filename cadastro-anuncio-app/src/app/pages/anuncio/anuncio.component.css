@@ -1,7 +1,12 @@
-.container{
-    padding-bottom: 30px;
+.container {
+  padding-bottom: 30px;
 }
 
-.bg{
-    background-image: url("../../../assets/img/background.png");
+.bg {
+  background-image: url("../../../assets/img/background.png");
+}
+
+.area-click {
+    width: 150px;
+    height:auto;
 }
