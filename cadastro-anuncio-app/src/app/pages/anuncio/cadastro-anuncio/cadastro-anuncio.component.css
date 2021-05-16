@@ -46,9 +46,7 @@
   .btn-limpar {
     background-color: rgb(151, 148, 148);
     border: none;    
-    color: white;
-    margin-right: 10px !important;
-    margin-bottom: 10px !important;
+    color: white; 
   }
   
   .btn-limpar:hover {
@@ -62,6 +60,8 @@
   
 .bg{
   background-image: url("../../../../assets/img/background.png");
+  padding:10px;
+  border-radius: 5px;
   
 }
   

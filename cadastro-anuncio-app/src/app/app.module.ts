@@ -1,6 +1,6 @@
-import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { forwardRef, NgModule } from '@angular/core';
+import { forwardRef, NgModule, LOCALE_ID } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -48,6 +48,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { DatePickerFormatDirective } from './utils/date-picker-format.directive';
+import { AnuncioService } from './service/anuncio/anuncio.service';
+
+import localePt from '@angular/common/locales/pt';
+import ptBr from '@angular/common/locales/pt';
+
+registerLocaleData(localePt);
 
 
 const globalSettings: RecaptchaSettings = { siteKey: '6Lc8vGwUAAAAAOsheXbsSd7qKpwLv0t2ECF1i___' };
@@ -61,6 +67,8 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   suffix: "",
   thousands: "."
 };
+
+registerLocaleData(ptBr, 'pt-BR');
 
 @NgModule({
   declarations: [
@@ -113,11 +121,14 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     AuthGuard,
     AuthenticationService,
     UsuarioService,
+    AnuncioService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: RECAPTCHA_SETTINGS, useValue: globalSettings },
     { provide: MatPaginatorIntl, useClass: forwardRef(() => MatPaginatorIntlPortuguese) },
-    { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig }
+    { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig },
+    {provide: LOCALE_ID, useValue: 'pt-BR'},
+    {provide:  MatDatepickerModule, }  
   ],
   entryComponents: [
   ],

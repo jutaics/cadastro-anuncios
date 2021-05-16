@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/anuncios")
 @RequiredArgsConstructor
+@CrossOrigin("http://localhost:4200")
 public class CadastroAnuncioController {
 
     private final CadastroAnuncioRepository cadastroAnuncioRepository;

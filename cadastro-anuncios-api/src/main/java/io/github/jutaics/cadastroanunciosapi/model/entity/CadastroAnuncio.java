@@ -1,6 +1,10 @@
 package io.github.jutaics.cadastroanunciosapi.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,10 +28,14 @@ public class CadastroAnuncio {
 
     @Column(name = "dt_inicio", nullable = false)
     @JsonFormat(pattern = "dd/MM/yyyy")
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate dtInicio;
 
     @Column(name = "dt_termino", nullable = false)
     @JsonFormat(pattern = "dd/MM/yyyy")
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate dtTermino;
 
     @Column(name = "investimento_por_dia", nullable = false)
