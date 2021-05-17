@@ -15,17 +15,11 @@ Criado em 15/05/2021, esse **Projeto** tem como objetivo mostrar as informaçõe
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-
 
 #Exemplo da Tela de Cadastro:
 <p align="center">
   <img src="https://github.com/jutaics/cadastro-anuncios/blob/master/pagina_inicial.png" width="700" height="auto" />  
 </p>
-<br>
-<br>
 <br>
 <br>
 <br>
