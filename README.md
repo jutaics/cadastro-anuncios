@@ -4,9 +4,13 @@ Cadastro de Anúncios Divulga Tudo
 Criado em 15/05/2021, esse **Projeto** tem como objetivo mostrar as informações de:
 
 ▪valor total investido
+<br>
 ▪quantidade máxima de visualizações
+<br>
 ▪quantidade máxima de cliques
+<br>
 ▪quantidade máxima de compartilhamentos
+<br>
 ▪Os relatórios poderão ser filtrados por intervalo de tempo e cliente.
 <br>
 <br>
