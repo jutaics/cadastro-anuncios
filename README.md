@@ -27,6 +27,17 @@ Criado em 15/05/2021, esse **Projeto** tem como objetivo mostrar as informaçõe
   <img src="https://github.com/jutaics/cadastro-anuncios/blob/master/tela_consulta.png" width="700" height="auto" />  
 </p>
 
+</p>
+<br>
+<br>
+
+#Exemplo do Diálogo de Detalhes:
+<p align="center">
+  <img src="https://github.com/jutaics/cadastro-anuncios/blob/master/tela_detalhes.png" width="700" height="auto" />  
+</p>
+
+
+
 
 
 
