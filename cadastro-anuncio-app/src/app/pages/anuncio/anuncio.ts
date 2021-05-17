@@ -6,5 +6,8 @@ export class Anuncio {
     dtInicio: string;
     dtTermino: string;
     investimentoPorDia: any;
+    totalVisualizacao: any;
+    totalClique: any;
+    totalCompartilhamento: any;
 
 }
