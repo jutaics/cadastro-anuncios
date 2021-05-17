@@ -3,16 +3,15 @@ Cadastro de Anúncios Divulga Tudo
 
 Criado em 15/05/2021, esse **Projeto** tem como objetivo mostrar as informações de:
 
-▪valor total investido
+▪ valor total investido
 <br>
-▪quantidade máxima de visualizações
+▪ quantidade máxima de visualizações
 <br>
-▪quantidade máxima de cliques
+▪ quantidade máxima de cliques
 <br>
-▪quantidade máxima de compartilhamentos
+▪ quantidade máxima de compartilhamentos
 <br>
-▪Os relatórios poderão ser filtrados por intervalo de tempo e cliente.
-<br>
+▪ Os relatórios poderão ser filtrados por intervalo de tempo e cliente.
 <br>
 <br>
 
@@ -20,7 +19,6 @@ Criado em 15/05/2021, esse **Projeto** tem como objetivo mostrar as informaçõe
 <p align="center">
   <img src="https://github.com/jutaics/cadastro-anuncios/blob/master/pagina_inicial.png" width="700" height="auto" />  
 </p>
-<br>
 <br>
 <br>
 
