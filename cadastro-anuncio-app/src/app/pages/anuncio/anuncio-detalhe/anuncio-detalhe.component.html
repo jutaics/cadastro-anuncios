@@ -1,0 +1,34 @@
+<div id="content" #content>
+    <div class="card-block">
+        <h4 class="card-title">{{anuncio.nomeAnuncio}}</h4>
+        <div>
+            <form>
+                <div class="form-group">
+                    <label>Valor Investido (R$):</label>
+                    <input type="text" class="form-control" readonly value="{{anuncio.investimentoPorDia}}">
+                </div>
+
+                <div class="form-group">
+                    <label>Quantidade Máxima Visualizações:</label>
+                    <input type="text" class="form-control" readonly value="{{anuncio.nomeAnuncio}}">
+                </div>
+
+                <div class="form-group">
+                    <label>Quantidade Máxima de Cliques:</label>
+                    <input type="text" class="form-control" readonly value="{{anuncio.nomeAnuncio}}">
+                </div>
+
+                <div class="form-group">
+                    <label>Quantidade Máxima Compartilhamentos:</label>
+                    <input type="text" class="form-control" readonly value="{{anuncio.nomeAnuncio}}">
+                </div>
+
+                <div class="btn-toolbar float-right">
+                    <button class="btn" class="btn btn-info mr-2 mb-2" (click)="downloadPDF()">Imprimir</button>
+                    <!--<button class="btn" class="btn btn-light mr-2 mb-2" (click)="fechar()">Fechar</button>-->
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

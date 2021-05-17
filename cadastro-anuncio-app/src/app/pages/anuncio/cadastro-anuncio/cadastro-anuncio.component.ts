@@ -1,4 +1,3 @@
-import { ConsultaAnuncioComponent } from './../consulta-anuncio/consulta-anuncio.component';
 import { Component, forwardRef, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { AnuncioService } from 'src/app/service/anuncio/anuncio.service';
@@ -6,6 +5,7 @@ import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 import { Anuncio } from '../anuncio';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import * as  moment from 'moment';
+import { ConsultaAnuncioComponent } from '../consulta-anuncio/consulta-anuncio.component';
 
 
 
@@ -78,9 +78,21 @@ export class CadastroAnuncioComponent implements OnInit {
     anuncio.investimentoPorDia = this.myForm.get('investimentoPorDia').value;
 
     this.service.salvar(anuncio).subscribe(response => {
-      console.log(response);  
+      console.log(response);
     })
-    //this.limparForm();
+
+    Swal.fire({
+      text: 'Dados Cadastrados Com Sucesso!',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      },
+      icon: 'success',
+    });
+
+    this.myForm.reset();
   }
 
 
@@ -98,9 +110,10 @@ export class CadastroAnuncioComponent implements OnInit {
         text: 'Período Inválido',
         icon: 'error',
       });
-      this.myForm.get('periodoFim').setValue('');
+      this.myForm.get('dtTermino').setValue('');
       return;
     }
+
   }
 
   validarDataInicio(event) {

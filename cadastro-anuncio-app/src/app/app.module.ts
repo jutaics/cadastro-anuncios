@@ -81,8 +81,7 @@ registerLocaleData(ptBr, 'pt-BR');
     HelloComponent,
     DatePickerFormatDirective
   ],
-  imports: [
-    MatDialogModule,
+  imports: [   
     MatIconModule,
     BrowserModule,
     MaterialModule,

@@ -1,7 +1,33 @@
-.tituloColuna{
-    font-weight: bold;
+.tituloColuna {
+  font-weight: bold;
+}
+p {
+  font-family: Lato;
+}
+
+.form-control-feedback {
+  animation: 1s alertAnim forwards;
+}
+
+@keyframes alertAnim {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg{
+    padding:10px;
 }
 
 .botao-imprimir{
-    padding-top:15px;
+  padding-top:15px;
+}
+
+.cursor{
+  cursor: pointer;
 }
