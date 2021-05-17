@@ -18,7 +18,7 @@ Criado em 15/05/2021, esse **Projeto** tem como objetivo mostrar as informaçõe
 
 #Exemplo da Tela de Cadastro:
 <p align="center">
-  <img src="https://github.com/jutaics/cadastro-anuncios/blob/master/pagina_inicial.png" width="514" height="auto" />  
+  <img src="https://github.com/jutaics/cadastro-anuncios/blob/master/pagina_inicial.png" width="700" height="auto" />  
 </p>
 <br>
 <br>
@@ -28,7 +28,7 @@ Criado em 15/05/2021, esse **Projeto** tem como objetivo mostrar as informaçõe
 
 #Exemplo da Tela de Consulta:
 <p align="center">
-  <img src="https://github.com/jutaics/cadastro-anuncios/blob/master/tela_consulta.png" width="514" height="auto" />  
+  <img src="https://github.com/jutaics/cadastro-anuncios/blob/master/tela_consulta.png" width="700" height="auto" />  
 </p>
 
 
